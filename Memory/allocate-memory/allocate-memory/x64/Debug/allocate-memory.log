@@ -1,0 +1,23 @@
+﻿  Building 'allocate-memory' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Debug\allocate-memory.inf
+  Stamping [Version] section with DriverVer=03/10/2024,1.8.25.422
+  allocatememory.c
+  allocate-memory.vcxproj -> C:\Users\eberk\OneDrive\Desktop\github_projects\WinKernelDev\Memory\allocate-memory\x64\Debug\allocate-memory.sys
+  Done Adding Additional Store
+  Successfully signed: C:\Users\eberk\OneDrive\Desktop\github_projects\WinKernelDev\Memory\allocate-memory\x64\Debug\allocate-memory.sys
+  
+  Driver is 'Universal'.
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  C:\Users\eberk\OneDrive\Desktop\github_projects\WinKernelDev\Memory\allocate-memory\x64\Debug\allocate-memory\allocate-memory.cat
+  Done Adding Additional Store
+  Successfully signed: C:\Users\eberk\OneDrive\Desktop\github_projects\WinKernelDev\Memory\allocate-memory\x64\Debug\allocate-memory\allocate-memory.cat
+  

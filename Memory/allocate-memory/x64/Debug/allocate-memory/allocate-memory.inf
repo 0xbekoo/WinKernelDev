@@ -1,0 +1,80 @@
+;
+; allocate-memory.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System ; TODO: specify appropriate Class
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=allocate-memory.cat
+DriverVer = 03/10/2024,1.8.25.422
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+allocate-memory_Device_CoInstaller_CopyFiles = 11
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+allocate-memory.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%allocate-memory.DeviceDesc%=allocate-memory_Device, Root\allocate-memory ; TODO: edit hw-id
+
+[allocate-memory_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+allocate-memory.sys
+
+;-------------- Service installation
+[allocate-memory_Device.NT.Services]
+AddService = allocate-memory,%SPSVCINST_ASSOCSERVICE%, allocate-memory_Service_Inst
+
+; -------------- allocate-memory driver install sections
+[allocate-memory_Service_Inst]
+DisplayName    = %allocate-memory.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\allocate-memory.sys
+
+;
+;--- allocate-memory_Device Coinstaller installation ------
+;
+
+[allocate-memory_Device.NT.CoInstallers]
+AddReg=allocate-memory_Device_CoInstaller_AddReg
+CopyFiles=allocate-memory_Device_CoInstaller_CopyFiles
+
+[allocate-memory_Device_CoInstaller_AddReg]
+;
+
+
+[allocate-memory_Device_CoInstaller_CopyFiles]
+;
+
+
+[allocate-memory_Device.NT.Wdf]
+KmdfService =  allocate-memory, allocate-memory_wdfsect
+[allocate-memory_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "allocate-memory Installation Disk"
+allocate-memory.DeviceDesc = "allocate-memory Device"
+allocate-memory.SVCDESC = "allocate-memory Service"
