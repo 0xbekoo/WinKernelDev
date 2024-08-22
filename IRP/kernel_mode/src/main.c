@@ -1,3 +1,13 @@
+// ╔═══════════════════════════════════════════════════════════╗
+// ║                                                           ║
+// ║            ⚠️  Windows Kernel Development!  ⚠️           ║
+// ║                                                           ║
+// ║  @author: bekoo                                           ║
+// ║  @website: 0xbekoo.github.io                              ║
+// ║  @Project: I/O Request Packets (IRP) - Kernel Mode        ║
+// ║                                                           ║
+// ╚═══════════════════════════════════════════════════════════╝
+
 #include "main.h"
 
 NTSTATUS IrpCreate(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
@@ -88,9 +98,6 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT PDrvObj, PUNICODE_STRING RegistryPath) {
     PDrvObj->MajorFunction[IRP_MJ_CREATE]   = IrpCreate;
     PDrvObj->MajorFunction[IRP_MJ_WRITE]    = IrpWrite;
     PDrvObj->MajorFunction[IRP_MJ_READ]     = IrpRead;
-
-    //IoCreateDevice
-    //IOCreateSym
 
     return STATUS_SUCCESS;
 }

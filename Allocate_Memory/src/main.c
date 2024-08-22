@@ -1,3 +1,13 @@
+// ╔═══════════════════════════════════════════════════════════╗
+// ║                                                           ║
+// ║            ⚠️  Windows Kernel Development!  ⚠️           ║
+// ║                                                           ║
+// ║  @author: bekoo                                           ║
+// ║  @website: 0xbekoo.github.io                              ║
+// ║  @Project: Allocate Memory in Kernel Pool                 ║
+// ║                                                           ║
+// ╚═══════════════════════════════════════════════════════════╝
+
 #pragma warning (disable: 4100 4996 4047)
 #include "main.h"
 
