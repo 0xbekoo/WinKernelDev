@@ -1,0 +1,12 @@
+﻿#pragma once 
+
+#include <stdio.h>
+#include <Windows.h>
+
+#define DEVICE_NAME L"\\\\.\\MyDevice"
+
+#define IOCTL_MEM_ALLOCATE \
+    CTL_CODE(FILE_DEVICE_UNKNOWN, 0x800, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+#define IOCTL_MEM_READ \
+    CTL_CODE(FILE_DEVICE_UNKNOWN, 0x801, METHOD_BUFFERED, FILE_ANY_ACCESS)

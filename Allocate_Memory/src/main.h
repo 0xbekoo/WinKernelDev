@@ -1,4 +1,12 @@
-#include <ntifs.h>
+#include <ntddk.h>
 
-NTSTATUS DriverEntry(PDRIVER_OBJECT PDrvObj, PUNICODE_STRING RegistryPath);
-NTSTATUS UnloadDriver(PDRIVER_OBJECT PDrvObj);
+#define Tag 'beko'
+
+NTSTATUS DriverEntry(
+	_In_ PDRIVER_OBJECT DriverObject,
+	_In_ PUNICODE_STRING RegistryPath
+);
+
+NTSTATUS UnloadDriver(
+	_In_ PDRIVER_OBJECT DriverObject
+);
