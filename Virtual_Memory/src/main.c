@@ -1,3 +1,13 @@
+// ╔═══════════════════════════════════════════════════════════╗
+// ║                                                           ║
+// ║            ⚠️  Windows Kernel Development!  ⚠️           ║
+// ║                                                           ║
+// ║  @author: bekoo                                           ║
+// ║  @website: 0xbekoo.github.io                              ║
+// ║  @Project: Virtual Memory                                 ║
+// ║                                                           ║
+// ╚═══════════════════════════════════════════════════════════╝
+
 #pragma warning(disable: 4996)
 
 #include "main.h"
