@@ -24,7 +24,7 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING RegistryPath) 
 		DbgPrintEx(0, 0, "Failed to Allocate Memory!\n");
 		return STATUS_INSUFFICIENT_RESOURCES;
 	}
-	DbgPrintEx(0, 0, "ALlocated Memory at 0x%p\n", VirtualAddress);
+	DbgPrintEx(0, 0, "Allocated Memory at 0x%p\n", VirtualAddress);
 
 	MDL = IoAllocateMdl(VirtualAddress, (ULONG)MemorySize, FALSE, FALSE, NULL);
 	if (NULL == MDL) {
